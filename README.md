@@ -2,6 +2,26 @@
 
 `pathlib` is a Gleam library for manipulating UNIX paths, similar to Python's `os.path` functionality.
 
+## Usage
+
+```gleam
+let test_path = "/opt/installation/bin/client"
+
+// Test if the path is rooted
+pathlib.is_absolute(test_path) // -> True
+pathlib.is_relative(test_path) // -> False
+
+// Remove root and trailing slash
+pathlib.trim_separator(test_path) // -> "opt/installation/bin/client"
+
+// basename & dirname
+pathlib.basename(test_path) // -> "client"
+pathlib.dirname(test_path)  // -> "/opt/installation/bin"
+
+// split & join
+pathlib.split(test_path)           // -> ["opt", "installation", "bin", "client"]
+pathlib.join(["usr", "bin", "ls"]) // -> "/usr/bin/ls"
+```
 
 ## Quick start
 
