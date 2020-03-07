@@ -8,23 +8,23 @@ pub fn trim_separator_test() {
   |> expect.equal(_, "toomany/extra/slashes")
 }
 
-pub fn path_join_test() {
-  pathlib.path_join(["usr", "local", "bin"])
+pub fn join_test() {
+  pathlib.join(["usr", "local", "bin"])
   |> expect.equal(_, "/usr/local/bin")
-  pathlib.path_join(["/usr", "/local", "/bin"])
+  pathlib.join(["/usr", "/local", "/bin"])
   |> expect.equal(_, "/usr/local/bin")
-  pathlib.path_join(["/usr/", "/local/", "/bin/"])
+  pathlib.join(["/usr/", "/local/", "/bin/"])
   |> expect.equal(_, "/usr/local/bin")
-  pathlib.path_join([])
+  pathlib.join([])
   |> expect.equal(_, "/")
 }
 
-pub fn path_split_test() {
-  pathlib.path_split("/usr/local/bin")
+pub fn split_test() {
+  pathlib.split("/usr/local/bin")
   |> expect.equal(_, ["usr", "local", "bin"])
-  pathlib.path_split("proc/fd/1")
+  pathlib.split("proc/fd/1")
   |> expect.equal(_, ["proc", "fd", "1"])
-  pathlib.path_split("//shoddy/constructed//path//")
+  pathlib.split("//shoddy/constructed//path//")
   |> expect.equal(_, ["shoddy", "constructed", "path"])
 }
 

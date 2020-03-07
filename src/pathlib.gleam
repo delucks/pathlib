@@ -30,9 +30,9 @@ pub fn trim_separator(fragment: String) -> String {
   trim(fragment, Both, to_graphemes(separator()))
 }
 
-// path_join/1 concatenates a number of path fragments with the path separator,
+// join/1 concatenates a number of path fragments with the path separator,
 // trimming any leftover separator characters from each fragment.
-pub fn path_join(input_paths: List(String)) -> String {
+pub fn join(input_paths: List(String)) -> String {
   input_paths
   |> list.map(_, trim_separator)
   |> list.intersperse(_, with: separator())
@@ -41,8 +41,8 @@ pub fn path_join(input_paths: List(String)) -> String {
   |> iodata.to_string
 }
 
-// path_split/1 splits a full path into its component path fragments
-pub fn path_split(input_path: String) -> List(String) {
+// split/1 splits a full path into its component path fragments
+pub fn split(input_path: String) -> List(String) {
   input_path
   |> string.split(_, on: separator())
   |> list.filter(_, fn(x) { x != "" })
