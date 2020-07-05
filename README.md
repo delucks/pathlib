@@ -1,6 +1,6 @@
 # pathlib
 
-`pathlib` is a Gleam library for manipulating UNIX paths, similar to Python's `os.path` functionality.
+`pathlib` is a Gleam library for working with filesystem paths on Unix systems. Analogous modules are Elixir's `Path` or Python's `os.path`.
 
 ## Usage
 
