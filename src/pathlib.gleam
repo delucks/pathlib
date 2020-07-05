@@ -1,5 +1,5 @@
 import gleam/bool
-import gleam/iodata
+import gleam/string_builder
 import gleam/list
 import gleam/string
 import gleam/result
@@ -36,9 +36,9 @@ pub fn join(input_paths: List(String)) -> String {
   input_paths
   |> list.map(_, trim_separator)
   |> list.intersperse(_, with: separator())
-  |> iodata.from_strings
-  |> iodata.prepend(_, separator())
-  |> iodata.to_string
+  |> string_builder.from_strings
+  |> string_builder.prepend(_, separator())
+  |> string_builder.to_string
 }
 
 // split/1 splits a full path into its component path fragments
